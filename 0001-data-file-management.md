@@ -5,7 +5,7 @@
 * Date: 05/02/2021
 
 ## TODO
-Accept all decisions in this document except for discussion about marking files as pulled, which should be pulled into another ADR
+Accept all decisions in this document except for discussion about marking files as pulled, which should be pulled into another ADR.  Research power consumption of copying files on SD card.
 
 Technical Story: 
 https://github.com/WaterBearSondes/rriv-cli-client/issues/1
