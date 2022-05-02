@@ -4,6 +4,9 @@
 * Deciders: @ZavenArra, @jakehosen, @pleocavee
 * Date: 05/02/2021
 
+## TODO
+Accept all decisions in this document except for discussion about marking files as pulled, which should be pulled into another ADR
+
 Technical Story: 
 https://github.com/WaterBearSondes/rriv-cli-client/issues/1
 https://github.com/WaterBearSondes/rriv/issues/48
@@ -30,7 +33,7 @@ A RRIV device will respond to this command by streaming all data CSV files since
 
 ### Reception
 
-After initiating pull-data, the CLI client will recieve each CSV file as it is tranmitted, and store them separately in a folder named .data, within a subfolder named by the site name set on the currently attached RRIV device.  Files will be saved using the filenames transmitted by the RRIV device.  CSV data files will be marked as read only.  All data will also be ingested into a local SQLite database, for easily retrieval by local analysis tools.
+After initiating pull-data, the CLI client will recieve each CSV file as it is transmitted, and store them separately in a folder named .data, within a subfolder named by the site name set on the currently attached RRIV device.  Files will be saved using the filenames transmitted by the RRIV device.  CSV data files will be marked as read only.  All data will also be ingested into a local SQLite database, for easily retrieval by local analysis tools.
 
 ### Analysis
 
@@ -38,10 +41,37 @@ The RRIV client will expose an http endpoint for querying data stored in the SQL
 
 ### Remote Storage
 
-Configuration for automatic remote storage will be stored in a file named .remote, and contain service details, credentials, and a setting to automatically upload files retreived from the RRIV device to the configured cloud service.  
+Configuration for automatic remote storage will be stored in a file named .remote, and contain service details, credentials, and a setting to automatically upload files retreived from the RRIV device to the configured cloud service.  Remote storage is optional, and if internet connectivity does not exist, files simply are not uploaded.  
 
+
+## Considered Options
+
+### On-device management of files
+
+1. After completion of data transmission, the RRIV device will update a variable *last_pull* in the EEPROM with the timestamp of retrieval.  This variable is used by the next call to pull-data to identify new data files.
+2. [PROPOSED] Move files to a separate folder on the device once they have been pulled
+3. Append .pulled to fillnames once they have been pulled
+4. Prepend a line that identifying the file as pulled
+
+#### Pros and Cons
+
+##### Option 1
+
+If power is lost to the RTC, we don't know whats new vs old
+
+##### Option 2
+
+Does this use extra power?
+
+##### Option 3
+
+Does this use extra power?
 
 ## Decision Outcome
 
 Chosen option: We identified as design above as the appropriate initial design for data file management, which had no competing designs.
 
+
+### Negative Consequences
+
+* For remote storage, a future ADR will need to address what occurs when internet is not available during data pull.  Probably the rriv client should remind the user to sync at a minimum, once they are online.
