@@ -22,7 +22,7 @@ RRIV is a system for logging data from environmental sensors. To facilitate rapi
 * run-workflow [name]: This runs a given workflow. The workflow to be used is named as a command option.
 * show-workflow [name]: This displays a given workflow. The workflow to be used is named as a command option.
 * validate-workflow [name]: This checks that the workflow commands are valid and have correct syntax. The workflow to be used is named as a command option.
-* create-workflow [name]: This creates a blank workflow and generates metadata for the workflow (e.g., the cli protocal version with which the workflow is compatible). The workflow to be used is named as a command option.  The blank workflow also contains a comment with a URL pointing to the full CLI command documentation.
+* create-workflow [name]: This creates a blank workflow and generates metadata for the workflow (e.g., the cli protocal version with which the workflow is compatible). The workflow to be used is named as a command option. The blank workflow also contains a comment with a URL pointing to the full CLI command documentation.
 * edit-workflow [name]: This loads the named workflow in a VIM environment for text editing.
 
 ## Decision Outcome
@@ -37,4 +37,4 @@ This system is being developed to address the need for replicable setup processe
 ### Negative Consequences
 
 * Workflows must be compatible with the version of the firmware that is installed on the waterbear logger.
-* Workflows muts be built manually via text-editing at this point.
+* Workflows must be built manually via text-editing at this point.
