@@ -36,6 +36,9 @@ After initiating pull-data, the CLI client will recieve each CSV file as it is t
 
 The RRIV client will expose an http endpoint for querying data stored in the SQLite database.  This data will be filterable by get parameters such as site name and date range. 
 
+### Remote Storage
+
+Configuration for automatic remote storage will be stored in a file named .remote, and contain service details, credentials, and a setting to automatically upload files retreived from the RRIV device to the configured cloud service.  
 
 
 ## Decision Outcome
