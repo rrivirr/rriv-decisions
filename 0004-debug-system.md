@@ -11,6 +11,7 @@ The debug system has been out of commission since implementing the command struc
 
 * Need a debug system for current and future development
 * Would like an improved system with more options of customizability and utility
+* Improve debugging options for users who are using RRIV to develop novel sensor systems
 
 ## Overview
 
@@ -24,7 +25,7 @@ The debug system has been out of commission since implementing the command struc
 * command: clear-log-level
 * command: list-log-level
 * feature: cli client can clean debug messages
-* feature: support multiple tags
+* feature: support multiple concurrent regex tag filters during debugging
 * feature: colorize messages per level
 
 ## Description and Reasoning
