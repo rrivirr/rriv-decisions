@@ -1,6 +1,6 @@
 # Reimplementation of debug system for CLI version
 
-* Status: proposed
+* Status: accepted
 * Deciders: ZavenA, JakeH, KenC
 * Date: 2022-05-02
 
