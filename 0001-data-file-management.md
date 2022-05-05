@@ -29,7 +29,7 @@ A CLI command will be implemented to retrieve data with the following specificat
 
 **pull-data** [--all]
 
-A RRIV device will respond to this command by streaming all data CSV files since the last retrieval to the USB serial port, following a to-be-estabilished protocol for signaling the beginning and end of each file to the CLI client, as well as the file names.  Specifying --all results in *all* data CSV files stored on the device being sent.  After completion of data transmission, the RRIV device will update a variable *last_pull* in the EEPROM with the timestamp of retrieval.  This variable is used by the next call to pull-data to identify new data files.
+A RRIV device will respond to this command by streaming all data CSV files since the last retrieval to the USB serial port, following a to-be-estabilished protocol for signaling the beginning and end of each file to the CLI client, as well as the file names.  Specifying --all results in *all* data CSV files stored on the device being sent.  A
 
 ### Reception
 
