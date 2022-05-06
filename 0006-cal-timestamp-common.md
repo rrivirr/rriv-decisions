@@ -23,47 +23,12 @@ Calibration timestamp is a very common parameter to save for almost every driver
 
 ## Decision Outcome
 
+* Place cal_timestamp in the common config for the SensorDriver class
 
 ### Positive Consequences <!-- optional -->
 
-* {e.g., improvement of quality attribute satisfaction, follow-up decisions required, …}
-* …
+* We want to encourage people to use calibrations and we want them to use timestamps with those so this is a good way to support and standardize this practice.
 
 ### Negative Consequences <!-- optional -->
 
-* {e.g., compromising quality attribute, follow-up decisions required, …}
-* …
-
-## Pros and Cons of the Options <!-- optional -->
-
-### {option 1}
-
-{example | description | pointer to more information | …} <!-- optional -->
-
-* Good, because {argument a}
-* Good, because {argument b}
-* Bad, because {argument c}
-* … <!-- numbers of pros and cons can vary -->
-
-### {option 2}
-
-{example | description | pointer to more information | …} <!-- optional -->
-
-* Good, because {argument a}
-* Good, because {argument b}
-* Bad, because {argument c}
-* … <!-- numbers of pros and cons can vary -->
-
-### {option 3}
-
-{example | description | pointer to more information | …} <!-- optional -->
-
-* Good, because {argument a}
-* Good, because {argument b}
-* Bad, because {argument c}
-* … <!-- numbers of pros and cons can vary -->
-
-## Links <!-- optional -->
-
-* {Link type} {Link to ADR} <!-- example: Refined by [ADR-0005](0005-example.md) -->
-* … <!-- numbers of links can vary -->
+* If it's not used it would take up space that was not needed in the common config and ultimately EPROM.
