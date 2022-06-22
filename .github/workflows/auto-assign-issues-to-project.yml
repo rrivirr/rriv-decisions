@@ -1,0 +1,17 @@
+name: Auto Assign Issues to Project(s)
+
+on:
+  issues:
+    types: [opened, labeled]
+  pull_request:
+    types: [opened, labeled]
+
+jobs:
+  assign_one_project:
+    runs-on: ubuntu-latest
+    name: Assign to RRIV Project
+    steps:
+    - uses: actions/add-to-project@main
+      with:
+        project-url: https://github.com/orgs/rrivirr/projects/2
+        github-token: ${{ secrets.ORG_CI_TOKEN }}
