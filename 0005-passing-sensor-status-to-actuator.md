@@ -4,6 +4,8 @@
 - Deciders: @ZavenArra, @jakehosen, @emersonae
 - Date 8/12/2022
 
+rrivirr/rriv#85
+
 **Context and Problem Statement**
 Future use cases of actuators may need more complex structure than relying on timers to sync up sensors and actuators. More complex actuators may need to know the status of a sensor. Some actuators may be dependent on if a sensor has taken a reading yet or not. 
 It was noted that as of now actuators are a “type” of sensor in the waterbear structure, even though actuators don’t “take measurements”. 
